@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Karus, the best SOCMINT tool</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+    <script src="{{url_for('static', filename='main.js')}}"></script>
+</head>
+<body>
+    <div>
+        <h1>Karus</h1>
+    </div>
+    <div>
+        <form name="lookup" action="javascript:getResults()"><br>
+            <label for="name"></label>
+            <input type="text" id="name" name="name" placeholder="username"><br><br>
+            <label class="container">Roblox
+                <input type="checkbox" id="roblox" name="roblox">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Minecraft
+                <input type="checkbox" id="minecraft" name="minecraft">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Steam
+                <input type="checkbox" id="steam" name="steam">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Github
+                <input type="checkbox" id="github" name="github">
+                <span class="checkmark"></span>
+            </label>
+            <input type="submit" value="Lookup">
+        </form>
+    </div>
+    <pre class="display" id="json"></pre>
+</body>
+</html>
