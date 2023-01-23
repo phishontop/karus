@@ -19,4 +19,4 @@ class MinecraftLookup:
         self.stats["punishments"] = servers.punishments
         self.stats["purchases"] = servers.purchases
 
-        return self.stats
+        return {"minecraft": self.stats}

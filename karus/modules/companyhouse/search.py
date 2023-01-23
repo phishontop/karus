@@ -24,8 +24,16 @@ class CompanyhouseSearch:
             result
             for result in result_list
             if result is not None
+            if "full_name" in result.__dict__
             if result.full_name.lower() == self.fullname
         ]
 
-    def run(self):
-        return self.results
+    def run(self) -> dict:
+        results = self.results
+        if results:
+            result = results[0]
+            result.address = "".join(result.address.split(",")[:2])
+            return {"companyhouse": result.__dict__}
+
+        else:
+            return {"companyhouse": {}}

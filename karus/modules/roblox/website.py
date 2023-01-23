@@ -13,7 +13,11 @@ class WebsiteScraper:
         log_options = step["log_option"]
         if log_options:
             if log_options["type"] == "float":
-                return float(response.json()[log_options["key"]]) > log_options["more"]
+                try:
+                    return float(response.json()[log_options["key"]]) > log_options["more"]
+
+                except:
+                    return False
 
         else:
             return False
@@ -81,23 +85,8 @@ class WebsiteScraper:
                     }
                     
                 ]
-            },
-            "bloxearn": {
-                "base_url": "https://bloxearn.com/",
-                "steps": [
-                    {
-                        "url": "https://api.bloxearn.com/auth/login",
-                        "payload": {"username": self.username},
-                        "headers": {"User-Agent": "Mozilla/5.0 (X11; CrOS armv7l 13597.84.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.105 Safari/537.36"},
-                        "log": False
-                    },
-                    {
-                        "url": "https://api.bloxearn.com/user",
-                        "headers": {"User-Agent": "Mozilla/5.0 (X11; CrOS armv7l 13597.84.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.105 Safari/537.36"},
-                        "log": True
-                    }
-                ]
             }
+
         }
 
         for options in websites.values():

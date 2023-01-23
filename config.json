@@ -2,5 +2,8 @@
     "roblox": {
         "cookie": null,
         "game_limit": 10
+    },
+    "discord": {
+        "bloxlink_api_key": null
     }
 }

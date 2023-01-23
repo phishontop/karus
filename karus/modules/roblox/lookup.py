@@ -12,14 +12,10 @@ import json
 import requests
 
 
-def get_config():
-    return json.load(open("config.json"))
-
-
 class DefaultArgument:
 
     def __init__(self) -> None:
-        config = get_config()
+        config = json.load(open("config.json"))
         self.database = None
         self.file = None
         self.cookie = config["roblox"]["cookie"]
@@ -59,7 +55,7 @@ class RobloxLookup:
         else:
             self.new_lookup()
 
-        return self.stats
+        return {"roblox": self.stats}
 
     def new_lookup(self):
         functions = {

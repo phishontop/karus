@@ -6,6 +6,4 @@ def test_companyhouse_search():
     results1 = search1.run()
 
     assert len(results1) > 0
-
-    for result in results1:
-        assert result.full_name.lower() == "william smith"
+    assert results1["companyhouse"]["full_name"].lower() == "william smith"

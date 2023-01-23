@@ -3,6 +3,7 @@ from .minecraft.lookup import MinecraftLookup
 from .github.lookup import GithubLookup
 from .companyhouse.search import CompanyhouseSearch
 from .steam.lookup import SteamLookup
+from .discord.lookup import DiscordLookup
 
 
 lookup_modules = {
@@ -25,6 +26,10 @@ lookup_modules = {
     "steam": {
         "object": SteamLookup.from_username,
         "kwargs": {"name": None}
+    },
+    "discord": {
+        "object": DiscordLookup,
+        "kwargs": {"discord_id": None}
     }
 }
 

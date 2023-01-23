@@ -11,9 +11,10 @@ def lookup():
     modules = payload["modules"]
 
     lookup_objects = [
-        LookupFactory.create_lookup_object(module=module, kwargs={"name": payload["name"]})
+        LookupFactory.create_lookup_object(module=module, kwargs=payload["kwargs"])
         for module in modules
     ]
+
     data = {}
     for lookup_object in lookup_objects:
         data = {

@@ -1,7 +1,7 @@
 
-function sendLookup(name, modules) {
+function sendLookup(input, modules, type) {
     const data = {
-        name: name,
+        kwargs: {[type]: input},
         modules: modules
     };
 
@@ -16,15 +16,26 @@ function sendLookup(name, modules) {
 
 
 function getResults() {
-    const modules = ["minecraft", "github", "roblox", "steam"];
+
+    let type = document.lookup["type"].value
+    const modules = {
+        name: ["minecraft", "github", "roblox", "steam"],
+        fullname: ["companyhouse"],
+        discord_id: ["discord"]
+    };
+
     const modulesTicked = []
 
-    for (var i = 0; i < modules.length; i++) {
-        module = modules[i];
+    for (var i = 0; i < modules[type].length; i++) {
+        module = modules[type][i];
         if (document.lookup[module].checked) {
             modulesTicked.push(module)
         }
     }
 
-    sendLookup(document.lookup["name"].value, modulesTicked);
+    sendLookup(
+        document.lookup["input"].value,
+        modulesTicked,
+        type
+    );
 }

@@ -48,10 +48,7 @@ class GameScraper:
             if game.name not in self.games:
                 self.games.append(game.name)
 
-        except requests.exceptions.ConnectionError:
-            pass
-
-        except KeyError:
+        except:
             pass
 
     def fetch_games(self) -> None:

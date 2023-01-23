@@ -33,7 +33,7 @@ input[type=text] {
     color: #B3B3B3;
     outline: none;
     text-align: center;
-    margin: 0px 0px 10px -10px;
+    margin: 0px 0px 10px 0px;
     font-size: 20px;
 }
 
@@ -71,7 +71,7 @@ input[type=checkbox] {
 }
 
 .form-group label {
-    margin: 0px 5px 0px 50px;
+    margin: 0px 0px 0px 50px;
     position: relative;
     cursor: pointer;
 }
@@ -107,12 +107,10 @@ input[type=checkbox] {
     transform: rotate(45deg);
 }
 
-
 .display {
     color: #FFFFFF;
     margin: 50px 0px 50px 150px;
 }
-
 
 .container {
     color: #FFFFFF;
@@ -185,6 +183,19 @@ input[type=submit] {
     margin: 4px 2px;
     cursor: pointer;
     margin-left: 73px;
+    color: #FFFFFF;
+    font-family: "DM Sans", sans-serif;
+    font-size: 20px;
+    width:250px;
+}
+
+a:link, a:visited {
+    background-color: #252628;
+    border: none;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
     color: #FFFFFF;
     font-family: "DM Sans", sans-serif;
     font-size: 20px;
