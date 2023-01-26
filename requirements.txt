@@ -2,3 +2,4 @@ pytest
 flask
 requests
 beautifulsoup4
+pymongo
