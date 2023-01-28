@@ -8,4 +8,9 @@ class PreviousNameScraper:
 
     def get_names(self) -> list:
         response = requests.get(f"https://users.roblox.com/v1/users/{self.user_id}/username-history?limit=100&sortOrder=Desc")
-        return [info["name"] for info in response.json()["data"]]
+        data = response.json().get("data")
+        if data is not None:
+            return [info["name"] for info in data]
+
+        else:
+            return []

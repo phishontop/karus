@@ -11,14 +11,12 @@ class CarrdLookup:
         )
 
         self.links = [
-            link["href"]
+            link["href"].replace("https://", "")
             for link in self.profile_soup.find_all("a", href=True)
-            if link["href"].startswith("http") and "carrd.co" not in link["href"]
+            if link["href"].startswith("https") and "carrd.co" not in link["href"]
         ]
 
     def run(self):
-        pass
+        return {"carrd": {"links": self.links}}
 
-
-lookup = CarrdLookup(name="p1xiy")
-print(lookup.links)
+#p1xiy

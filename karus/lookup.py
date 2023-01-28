@@ -16,3 +16,8 @@ def fullname_lookup():
 @lookup_blueprint.route("/discord", methods=['GET'])
 def discord_lookup():
     return render_template('discord/index.html')
+
+
+@lookup_blueprint.route("/image", methods=['GET'])
+def image_lookup():
+    return render_template('image/index.html')

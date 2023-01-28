@@ -1,5 +1,7 @@
 pytest
-flask
-requests
-beautifulsoup4
-pymongo
+flask~=2.2.2
+requests~=2.28.1
+beautifulsoup4~=4.11.1
+pymongo~=4.3.3
+discord~=2.1.0
+Pillow~=9.3.0

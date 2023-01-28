@@ -19,9 +19,10 @@ function getResults() {
 
     let type = document.lookup["type"].value
     const modules = {
-        name: ["minecraft", "github", "roblox", "steam"],
+        name: ["minecraft", "github", "roblox", "steam", "carrd"],
         fullname: ["companyhouse"],
-        discord_id: ["discord"]
+        discord_id: ["discord"],
+        image_url: ["viewport"]
     };
 
     const modulesTicked = []
